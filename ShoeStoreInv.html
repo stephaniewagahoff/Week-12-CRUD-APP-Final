@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Store Inventory</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="ShoeStoreInv.css">
+</head>
+<body class="container-fluid">
+    <div class="row">
+        <!-- Create Menu Column -->
+        <div class="col-sm-auto">
+            <div class="card">
+                <div class="card-header text-center">
+                    Inventory Menu
+                </div>
+                <div class="card-body">
+                    <!-- Create Accordion Menu-->
+                    <div class="accordion accordion-flush" id="divMenu">
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="accordionSketchers">
+                                <button id="btnSketchers" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSketchers" aria-expanded="false" aria-controls="collapseSketchers">
+                                    Sketchers
+                                </button>
+                            </div>
+                            <div id="collapseSketchers" class="accordion-collapse collapse" aria-labelledby="accordionSketchers" data-bs-parent="#divMenu">
+                                <div class="accordion-body">
+                                    <button id="btnSketchersWork" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('Sketchers', 'Work')">Work</button><br>
+                                    <button id="btnSketchersCasual" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('Sketchers', 'Casual')">Casual</button><br>
+                                    <button id="btnSketchersAthletic" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('Sketchers', 'Athletic')">Athletic</button><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="accordionNike">
+                                <button id="btnNike" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNike" aria-expanded="false" aria-controls="collapseNike">
+                                    Nike
+                                </button>
+                            </div>
+                            <div id="collapseNike" class="accordion-collapse collapse" aria-labelledby="btnNike" data-bs-parent="#divMenu">
+                                <div class="accordion-body">
+                                    <button id="btnNikeWork" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('Nike', 'Work')">Work</button><br>
+                                    <button id="btnNikeCasual" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('Nike', 'Casual')">Casual</button><br>
+                                    <button id="btnNikeAthletic" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('Nike', 'Athletic')">Athletic</button><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="accordionReebok">
+                                <button id="btnReebok" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseReebok" aria-expanded="false" aria-controls="collapseReebok">
+                                    Reebok
+                                </button>
+                            </div>
+                            <div id="collapseReebok" class="accordion-collapse collapse" aria-labelledby="btnReebok" data-bs-parent="#divMenu">
+                                <div class="accordion-body">
+                                    <button id="btnReebokWork" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('Reebok', 'Work')">Work</button><br>
+                                    <button id="btnReebokCasual" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('Reebok', 'Casual')">Casual</button><br>
+                                    <button id="btnReebokAthletic" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('Reebok', 'Athletic')">Athletic</button><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="accordionAdidas">
+                                <button id="btnAdidas" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdidas" aria-expanded="false" aria-controls="collapseAdidas">
+                                    Adidas
+                                </button>
+                            </div>
+                            <div id="collapseAdidas" class="accordion-collapse collapse" aria-labelledby="btnAdidas" data-bs-parent="#divMenu">
+                                <div class="accordion-body">
+                                    <button id="btnAdidasWork" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('Adidas', 'Work')">Work</button><br>
+                                    <button id="btnAdidasCasual" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('Adidas', 'Casual')">Casual</button><br>
+                                    <button id="btnAdidasAthletic" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('Adidas', 'Athletic')">Athletic</button><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="accordionDrMartens">
+                                <button id="btnDrMartens" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDrMartens" aria-expanded="false" aria-controls="collapseDrMartens">
+                                    Dr. Martens
+                                </button>
+                            </div>
+                            <div id="collapseDrMartens" class="accordion-collapse collapse" aria-labelledby="btnDrMartens" data-bs-parent="#divMenu">
+                                <div class="accordion-body">
+                                    <button id="btnDrMartensWork" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('DrMartens', 'Work')">Work</button><br>
+                                    <button id="btnDrMartensCasual" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('DrMartens', 'Casual')">Casual</button><br>
+                                    <button id="btnDrMartensAthletic" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('DrMartens', 'Athletic')">Athletic</button><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="accordionTimberland">
+                                <button id="btnTimberland" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTimberland" aria-expanded="false" aria-controls="collapseTimberland">
+                                    Timberland
+                                </button>
+                            </div>
+                            <div id="collapseTimberland" class="accordion-collapse collapse" aria-labelledby="btnTimberland" data-bs-parent="#divMenu">
+                                <div class="accordion-body">
+                                    <button id="btnTimberlandWork" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('Timberland', 'Work')">Work</button><br>
+                                    <button id="btnTimberlandCasual" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('Timberland', 'Casual')">Casual</button><br>
+                                    <button id="btnTimberlandAthletic" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('Timberland', 'Athletic')">Athletic</button><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="accordionConverse">
+                                <button id="btnConverse" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseConverse" aria-expanded="false" aria-controls="collapseConverse">
+                                    Converse
+                                </button>
+                            </div>
+                            <div id="collapseConverse" class="accordion-collapse collapse" aria-labelledby="btnConverse" data-bs-parent="#divMenu">
+                                <div class="accordion-body">
+                                    <button id="btnConverseWork" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('Converse', 'Work')">Work</button><br>
+                                    <button id="btnConverseCasual" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('Converse', 'Casual')">Casual</button><br>
+                                    <button id="btnConverseAthletic" class="btn btn-link" onclick="DOMInvDisplayManager.displayInventory('Converse', 'Athletic')">Athletic</button><br>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>               
+                </div>
+            </div>
+        </div>
+        <!-- Create Inventory Display Column -->
+        <div class="col-sm" id="divInventoryDisplay">
+        </div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="ShoeStoreInv.js"></script>
+</body>
+</html>
